@@ -3,4 +3,7 @@ project(sdl_demo C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(sdl_demo main.c)
+# Find SDL2
+find_package(SDL2 REQUIRED)
+
+add_executable(sdl_demo src/main.c)
