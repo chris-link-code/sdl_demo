@@ -80,8 +80,8 @@ message("")
 message(STATUS "finding SDL2_Mixer")
 IF (${SDL2_Mixer_FOUND})
     message(STATUS "SDL2_Mixer_found: " ${SDL2_TTF_FOUND})
-#        message(STATUS "SDL2_Mixer_include_dirs: " ${SDL2_Mixer_INCLUDE_DIRS})
-#        message(STATUS "SDL2_Mixer_libraries: " ${SDL2_Mixer_LIBRARIES})
+    #        message(STATUS "SDL2_Mixer_include_dirs: " ${SDL2_Mixer_INCLUDE_DIRS})
+    #        message(STATUS "SDL2_Mixer_libraries: " ${SDL2_Mixer_LIBRARIES})
     message(STATUS "SDL2_Mixer_version: " ${SDL2_Mixer_VERSION})
 ELSE ()
     message(FATAL_ERROR "SDL2_Mixer NOT FOUND")
@@ -95,7 +95,18 @@ message("")
 
 # ------- Inc & Link ---- #
 
-include_directories(${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIR} ${SDL2_IMAGE_INCLUDE_DIR} ${SDL2Mixer_INCLUDE_DIR})
-target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2TTF_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2Mixer_LIBRARY})
+include_directories(
+        ${SDL2_INCLUDE_DIRS}
+        ${SDL2TTF_INCLUDE_DIR}
+        ${SDL2_IMAGE_INCLUDE_DIR}
+        ${SDL2Mixer_INCLUDE_DIR}
+)
+target_link_libraries(
+        ${PROJECT_NAME}
+        ${SDL2_LIBRARIES}
+        ${SDL2TTF_LIBRARY}
+        ${SDL2_IMAGE_LIBRARY}
+        ${SDL2Mixer_LIBRARY}
+)
 
 # ------- End ----------- #

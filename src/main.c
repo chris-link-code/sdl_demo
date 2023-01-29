@@ -95,7 +95,7 @@ int WinMain(int argc, char **argv) {
             }
         }
         /* Clear screen */
-        SDL_SetRenderDrawColor(rend, 0, 0, 0, 255);
+        SDL_SetRenderDrawColor(rend, 255, 255, 255, 255);
         SDL_RenderClear(rend);
         /* Move the rectangle */
         x_vel = (right_pressed - left_pressed) * SPEED;
