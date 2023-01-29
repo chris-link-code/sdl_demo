@@ -17,16 +17,18 @@ int WinMain(int argc, char **argv) {
     printf("sdl demo\n");
 
     /* Initializes the timer, audio, video, joystick,
-    haptic, gamecontroller and events subsystems */
+    haptic, game controller and events subsystems */
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         printf("Error initializing SDL: %s\n", SDL_GetError());
         return 0;
     }
     /* Create a window */
-    SDL_Window *wind = SDL_CreateWindow("Hello Platformer!",
+    SDL_Window *wind = SDL_CreateWindow("Hello SDL!",
                                         SDL_WINDOWPOS_CENTERED,
                                         SDL_WINDOWPOS_CENTERED,
-                                        WIDTH, HEIGHT, 0);
+                                        WIDTH,
+                                        HEIGHT,
+                                        0);
     if (!wind) {
         printf("Error creating window: %s\n", SDL_GetError());
         SDL_Quit();
