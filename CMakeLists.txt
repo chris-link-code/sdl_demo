@@ -17,19 +17,20 @@ set(CMAKE_C_STANDARD 17)
 
 #set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 #set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMAKE")
-set(SOURCE_FILES src/main.c)
+
+#set(SOURCE_FILE src/main.c)
+set(SOURCE_FILE src/basic_setup.c)
 
 message("")
-message(STATUS "SOURCE entry point: " ${SOURCE_FILES})
-message("")
+message(STATUS "start source file: " ${SOURCE_FILE})
 
 # ------- End Set Vars --- #
 
 
 # ------- Executable ----- #
 
-add_executable(sdl_demo src/main.c)
-#ADD_EXECUTABLE(SDL2_Basic_Setup ${SOURCE_FILES})
+add_executable(sdl_demo ${SOURCE_FILE})
+#ADD_EXECUTABLE(SDL2_Basic_Setup ${SOURCE_FILE})
 
 # ------- End Executable - #
 
@@ -108,5 +109,8 @@ target_link_libraries(
         ${SDL2_IMAGE_LIBRARY}
         ${SDL2Mixer_LIBRARY}
 )
+
+# 隐藏控制台
+set(CMAKE_C_FLAGS ${CMAKE_C_FLAGS} -mwindows)
 
 # ------- End ----------- #
