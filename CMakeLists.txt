@@ -10,6 +10,9 @@ message(STATUS "cmake_c_compiler: " ${CMAKE_C_COMPILER})
 message(STATUS "cmake_project_name: " ${CMAKE_PROJECT_NAME})
 #message(STATUS "cmake_find_cmake: " ${CMAKE_SOURCE_DIR}/CMAKE)
 
+message("")
+message(STATUS "project_name: " ${PROJECT_NAME})
+
 set(CMAKE_C_STANDARD 17)
 
 
