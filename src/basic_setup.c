@@ -225,6 +225,8 @@ void main_loop() {
  * @return exit code
  */
 int WinMain(int argc, char **argv) {
+    //TODO 程序启动会立即崩溃
+
     // SDL Inits
     init_sdl();
     init_window_and_renderer();
