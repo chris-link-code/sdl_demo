@@ -4,7 +4,7 @@
 
 #define WIDTH 640
 #define HEIGHT 480
-#define SIZE 200
+#define SIZE 80
 #define SPEED 600
 #define GRAVITY 60
 #define FPS 60
@@ -23,7 +23,7 @@ int WinMain(int argc, char **argv) {
         return 0;
     }
     /* Create a window */
-    SDL_Window *wind = SDL_CreateWindow("Hello SDL!",
+    SDL_Window *wind = SDL_CreateWindow("Hello SDL",
                                         SDL_WINDOWPOS_CENTERED,
                                         SDL_WINDOWPOS_CENTERED,
                                         WIDTH,
@@ -53,10 +53,11 @@ int WinMain(int argc, char **argv) {
         /* Process events */
         while (SDL_PollEvent(&event)) {
             switch (event.type) {
-                case SDL_QUIT:
+                case SDL_QUIT: {
                     running = false;
                     break;
-                case SDL_KEYDOWN:
+                }
+                case SDL_KEYDOWN: {
                     switch (event.key.keysym.scancode) {
                         case SDL_SCANCODE_SPACE:
                             jump_pressed = true;
@@ -73,7 +74,8 @@ int WinMain(int argc, char **argv) {
                             break;
                     }
                     break;
-                case SDL_KEYUP:
+                }
+                case SDL_KEYUP: {
                     switch (event.key.keysym.scancode) {
                         case SDL_SCANCODE_SPACE:
                             jump_pressed = false;
@@ -90,6 +92,7 @@ int WinMain(int argc, char **argv) {
                             break;
                     }
                     break;
+                }
                 default:
                     break;
             }
